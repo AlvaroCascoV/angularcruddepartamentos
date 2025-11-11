@@ -8,9 +8,10 @@ import { DepartamentosComponent } from './components/departamentos-component/dep
 import { ServiceDepartamentos } from './service/service.departamentos';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateComponent } from './components/create-component/create-component';
 
 @NgModule({
-  declarations: [App, MenuComponent, DepartamentosComponent],
+  declarations: [App, MenuComponent, DepartamentosComponent, CreateComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideBrowserGlobalErrorListeners(), ServiceDepartamentos],
   bootstrap: [App],
