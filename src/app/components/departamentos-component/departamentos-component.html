@@ -1,0 +1,22 @@
+<div>
+  @if (departamentos) {
+  <table class="table table-striped table-primary">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Localidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (dept of departamentos; track dept) {
+      <tr>
+        <td>{{ dept.numero }}</td>
+        <td>{{ dept.nombre }}</td>
+        <td>{{ dept.localidad }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+</div>
