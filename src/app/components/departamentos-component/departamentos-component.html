@@ -6,6 +6,7 @@
         <th>Id</th>
         <th>Nombre</th>
         <th>Localidad</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +15,20 @@
         <td>{{ dept.numero }}</td>
         <td>{{ dept.nombre }}</td>
         <td>{{ dept.localidad }}</td>
+        <td>
+          <!-- <button
+            class="btn btn-primary"
+            [routerLink]="['/details/' + dept.numero + '/' + dept.nombre + '/' + dept.localidad]"
+          >
+            Detalles url
+          </button> -->
+          <button
+            class="btn btn-primary"
+            [routerLink]="['/details', dept.numero, dept.nombre, dept.localidad]"
+          >
+            Detalles
+          </button>
+        </td>
       </tr>
       }
     </tbody>
