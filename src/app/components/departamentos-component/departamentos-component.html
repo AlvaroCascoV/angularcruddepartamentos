@@ -1,4 +1,4 @@
-<div>
+<div class="m-5">
   @if (departamentos) {
   <table class="table table-striped table-bordered">
     <thead class="table-dark">
@@ -29,7 +29,9 @@
             Detalles
           </button>
           <button class="btn btn-warning mx-1" [routerLink]="['/edit', dept.numero]">Editar</button>
-          <button class="btn btn-danger mx-1">Delete</button>
+          <button class="btn btn-danger mx-1" (click)="deleteDepartamento(dept.numero)">
+            Delete
+          </button>
         </td>
       </tr>
       }

@@ -12,8 +12,19 @@ export class DepartamentosComponent implements OnInit {
   public departamentos!: Array<Departamento>;
   constructor(private _service: ServiceDepartamentos) {}
   ngOnInit(): void {
+    this.loadDepartamentos();
+  }
+
+  loadDepartamentos(): void {
     this._service.getDepartamentos().subscribe((response) => {
       this.departamentos = response;
+    });
+  }
+
+  deleteDepartamento(id: number): void {
+    this._service.deleteDepartamento(id).subscribe((response) => {
+      console.log('Eliminado ' + id);
+      this.loadDepartamentos();
     });
   }
 }

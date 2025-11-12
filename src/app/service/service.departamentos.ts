@@ -20,15 +20,6 @@ export class ServiceDepartamentos {
     return this._http.get<Departamento>(url);
   }
 
-  updateDepartamento(departamento: Departamento): Observable<any> {
-    let json = JSON.stringify(departamento);
-    let header = new HttpHeaders().set('Content-type', 'application/json');
-
-    let request = 'api/Departamentos';
-    let url = environment.urlApiDepartamentos + request;
-    return this._http.put(url, json, { headers: header });
-  }
-
   createDepartamento(departamento: Departamento): Observable<any> {
     //COMO REACT
     let json = JSON.stringify(departamento);
@@ -40,5 +31,20 @@ export class ServiceDepartamentos {
     let request = 'api/Departamentos';
     let url = environment.urlApiDepartamentos + request;
     return this._http.post<Array<Departamento>>(url, json, { headers: header });
+  }
+
+  updateDepartamento(departamento: Departamento): Observable<any> {
+    let json = JSON.stringify(departamento);
+    let header = new HttpHeaders().set('Content-type', 'application/json');
+
+    let request = 'api/Departamentos';
+    let url = environment.urlApiDepartamentos + request;
+    return this._http.put(url, json, { headers: header });
+  }
+
+  deleteDepartamento(idDepartamento: number): Observable<any> {
+    let request = 'api/departamentos/' + idDepartamento;
+    let url = environment.urlApiDepartamentos + request;
+    return this._http.delete(url);
   }
 }
