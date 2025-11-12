@@ -10,9 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateComponent } from './components/create-component/create-component';
 import { DetailsComponent } from './components/details-component/details-component';
+import { EditComponent } from './components/edit-component/edit-component';
 
 @NgModule({
-  declarations: [App, MenuComponent, DepartamentosComponent, CreateComponent, DetailsComponent],
+  declarations: [App, MenuComponent, DepartamentosComponent, CreateComponent, DetailsComponent, EditComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideBrowserGlobalErrorListeners(), ServiceDepartamentos],
   bootstrap: [App],

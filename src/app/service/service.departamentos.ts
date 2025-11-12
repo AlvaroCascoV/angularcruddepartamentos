@@ -14,6 +14,21 @@ export class ServiceDepartamentos {
     return this._http.get<Array<Departamento>>(url);
   }
 
+  findDepartamento(idDepartamento: number): Observable<Departamento> {
+    let request = 'api/Departamentos/' + idDepartamento;
+    let url = environment.urlApiDepartamentos + request;
+    return this._http.get<Departamento>(url);
+  }
+
+  updateDepartamento(departamento: Departamento): Observable<any> {
+    let json = JSON.stringify(departamento);
+    let header = new HttpHeaders().set('Content-type', 'application/json');
+
+    let request = 'api/Departamentos';
+    let url = environment.urlApiDepartamentos + request;
+    return this._http.put(url, json, { headers: header });
+  }
+
   createDepartamento(departamento: Departamento): Observable<any> {
     //COMO REACT
     let json = JSON.stringify(departamento);
